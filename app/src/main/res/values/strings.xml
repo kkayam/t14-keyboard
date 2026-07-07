@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">T14 Keyboard</string>
+    <string name="ime_name">T14 Keyboard</string>
+
+    <string name="setup_title">Setup</string>
+    <string name="setup_enable">1. Enable T14 Keyboard</string>
+    <string name="setup_select">2. Select T14 Keyboard</string>
+    <string name="setup_test_hint">Try typing here…</string>
+
+    <string name="section_languages">Languages</string>
+    <string name="import_language">Import language file…</string>
+    <string name="delete">Delete</string>
+
+    <string name="section_typing">Typing</string>
+    <string name="timeout_label">Multi-tap timeout: %1$d ms</string>
+    <string name="auto_caps">Auto-capitalize sentences</string>
+    <string name="double_space_period">Double-space inserts period</string>
+    <string name="show_strip">Show status strip while typing</string>
+</resources>
