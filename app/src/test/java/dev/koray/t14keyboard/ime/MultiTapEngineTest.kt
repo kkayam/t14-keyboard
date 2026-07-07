@@ -10,16 +10,16 @@ class MultiTapEngineTest {
 
     private class FakeSink : InputSink {
         val committed = StringBuilder()
-        var composing = ""
+        private var pendingComposing = ""
         var enterCount = 0
 
         override fun setComposing(text: String) {
-            composing = text
+            pendingComposing = text
         }
 
         override fun finishComposing(text: String) {
             committed.append(text)
-            composing = ""
+            pendingComposing = ""
         }
 
         override fun commitDirect(text: String) {
@@ -37,10 +37,10 @@ class MultiTapEngineTest {
         }
 
         override fun textBeforeCursor(max: Int): CharSequence =
-            (committed.toString() + composing).takeLast(max)
+            (committed.toString() + pendingComposing).takeLast(max)
 
         /** Committed text plus the pending composing char — what the user sees. */
-        val text: String get() = committed.toString() + composing
+        val text: String get() = committed.toString() + pendingComposing
     }
 
     private lateinit var sink: FakeSink
